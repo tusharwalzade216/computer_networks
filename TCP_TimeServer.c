@@ -7,7 +7,7 @@
 #include<time.h>
 int main()
 {
-  int listenfd,connfd;
+	int listenfd,connfd;
 	time_t ticks;
 	char buf[80];
 	struct sockaddr_in sa;
@@ -27,7 +27,7 @@ int main()
 	for(;;)
 	{
 		connfd=accept(listenfd,NULL,NULL);
-		ticks=time(NULL);printf("hello ");
+		ticks=time(NULL);
 		snprintf(buf,sizeof(buf),"%.24s\r\n",ctime(&ticks));
 		printf("%s",buf);
 		if( write( connfd, buf, strlen( buf)) < 0) 
