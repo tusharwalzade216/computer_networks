@@ -20,7 +20,6 @@ int main()
 	bzero(&sa,sizeof(sa));
 	sa.sin_family=AF_INET;
 	sa.sin_port=htons(13);
-	//printf("hell
 	sa.sin_addr.s_addr=htonl(INADDR_ANY);
 	bind(listenfd,(struct sockaddr *)&sa,sizeof(sa));
 	listen(listenfd,5);
