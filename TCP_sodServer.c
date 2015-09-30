@@ -14,7 +14,7 @@ int sumOfDigit(int num) {
                       sum = sum+rem;
                       num=num/10;
                 }
-								printf("%d\n",sum);	
+		printf("%d\n",sum);	
                 if(sum > 9) {
                         num = sum;
                         sum = 0;
@@ -24,8 +24,8 @@ int sumOfDigit(int num) {
 }
 
 int main() {
-			char str[100];
-    	int listen_fd, comm_fd, s=0, sum=0, i=0;
+	char str[100];
+    	int listen_fd, comm_fd, s=0, sum=0;
  
     	struct sockaddr_in servaddr;
  
@@ -44,12 +44,12 @@ int main() {
     	while(1) {
         	bzero( str, 100);
         	read(comm_fd,str,100);
-  		    s = atoi(str);
-		      printf("number recieved-->%d ", s);
-		      sum = sumOfDigit(s);
-		      sprintf(str, "%d ", sum);
+  		s = atoi(str);
+		printf("number recieved-->%d ", s);
+		sum = sumOfDigit(s);
+		sprintf(str, "%d ", sum);
         	write(comm_fd, str, strlen(str)+1);
     	}
-			fflush(stdout);
+	fflush(stdout);
     	return 0;
 }
