@@ -11,7 +11,7 @@ void dg_cli(FILE *fp, int sockfd, const struct sockaddr *psa, socklen_t slen) {
 	while(fgets(s, 80, fp) != NULL) {
 		write(sockfd, s, strlen(s));
 		n = read(sockfd, r, 80);
-		r[n] = 0;			//null termiate
+		r[n] = 0;			//null terminate
 		fputs(r, stdout);
 	}
 }
